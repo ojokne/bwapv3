@@ -1,0 +1,190 @@
+@import "reset";
+@import "color";
+@import "font";
+@import "header";
+@import "pages/contact";
+@import "pages/profile";
+@import "pages/expertise";
+@import "footer";
+
+[data-entrance] {
+    visibility: hidden;
+}
+
+body {
+    background-color: $tertiary-color;
+    font-family: $primary-font;
+}
+
+.index {
+    .index-nav {
+        z-index: 2;
+        background-color: rgba(0, 0, 0, .4);
+        width: 100%;
+    }
+
+
+
+    .carousel-item {
+        position: relative;
+
+        img {
+            width: 50%;
+            height: 650px;
+            object-fit: cover;
+        }
+    }
+
+    .carousel-item::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to top, rgba(0, 0, 0, .6), transparent);
+        // background-color: rgba(0, 0, 0, .4);
+    }
+}
+
+@media screen and (min-width:970px) {
+
+    .index-nav {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+
+        h1 {
+            padding: 20px;
+            margin: 20px;
+            font-size: 25px;
+            color: $secondary-color;
+        }
+
+        p {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px;
+            margin: 12px;
+
+            li {
+                list-style-type: none;
+                padding: 8px;
+                margin: 8px;
+                font-size: 20px;
+
+                a {
+                    color: $secondary-color;
+                    text-decoration: none;
+                }
+
+                a:hover {
+                    background-color: rgba(0, 0, 0, .4);
+                    padding: 12px;
+                }
+            }
+
+        }
+    }
+
+}
+
+
+
+
+
+
+@media screen and (max-width:768px) {
+
+    .index-nav {
+
+        h1 {
+            display: none;
+        }
+
+
+        #menu-icon,
+        ul {
+            position: absolute;
+            z-index: 2;
+        }
+
+        #menu-icon {
+            color: $secondary-color;
+            padding: 12px 12px 0 12px;
+            margin: 0;
+            font-size: 50px;
+            top: 0;
+
+            i {
+                padding: 0;
+                margin: 0;
+            }
+
+        }
+
+        ul {
+            top: 15%;
+            padding: 0;
+            display: none;
+            width: 0;
+            background-color: $bg-light;
+
+
+            li {
+                list-style-type: none;
+                padding: 8px;
+                border-bottom: 3px solid $secondary-color ;
+
+                a {
+                    text-decoration: none;
+                    color: $link-color;
+                }
+            }
+        }
+
+    }
+
+}
+
+.slideIn {
+    animation-name: slideIn;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.slideOut {
+    animation: slideOut;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+
+}
+
+@keyframes slideOut {
+    from {
+        width: 100%;
+        opacity: 1;
+
+    }
+
+    to {
+        width: 0;
+        opacity: 0;
+    }
+
+}

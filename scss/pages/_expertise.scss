@@ -1,0 +1,70 @@
+.expertise {
+    .main-nav {
+        // to change header photo go to respective page scss file
+        background-image: url("../images/ham_sport.jpg");
+    }
+
+    .expertise-item {
+        width: 100%;
+        height: 500px;
+
+        a {
+            text-decoration: none;
+        }
+
+        figure {
+            position: relative;
+            height: 100%;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                height: 100%;
+            }
+
+
+            figcaption {
+                position: relative;
+                top: -10vh;
+                color: $secondary-color;
+                padding: 12px;
+            }
+        }
+
+        figure::before {
+            content: "";
+            position: absolute;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, .6), transparent);
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+
+}
+
+@media screen and (min-width:970px) {
+    .expertise {
+
+        .expertise-details {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            column-gap: 12px;
+            align-items: center;
+            justify-content: center;
+
+            .expertise-item {
+                margin-top: 12px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    .expertise {
+
+        .expertise-item {
+            margin-top: 6px;
+        }
+    }
+}
